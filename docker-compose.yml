@@ -1,0 +1,17 @@
+version: '3'
+services:
+        web:
+                build: ./rtdash/
+                links:
+                        - redis
+                environment:
+                        - REDIS_URL=redis://cache
+                        - REDIS_HOST=redis
+                        - REDIS_PORT=6379
+                ports:
+                        - "4000:4000"
+        redis:
+                image: "redis:alpine"
+                container_name: cache
+                expose:
+                        - 6379
