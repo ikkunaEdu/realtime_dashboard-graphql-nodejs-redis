@@ -1,12 +1,15 @@
-FROM node:8
+FROM node:9.3-alpine
 
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
-WORKDIR /usr/src/app
+USER node
+
+RUN mkdir /home/node/app
+
+WORKDIR /home/node/app
 
 COPY package*.json ./
 
-RUN npm config set user 0
-RUN npm config set unsafe-perm true
 RUN npm install
 
 COPY ./server .
