@@ -1,0 +1,15 @@
+{
+  "name": "webserver",
+  "version": "0.0.1",
+  "description": "web server for react project",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Diego Correa T.",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
